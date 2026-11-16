@@ -1,0 +1,242 @@
+model,prompt_id,category,prompt,response,generated_tokens,generation_duration_sec,generation_tokens_per_sec,prompt_eval_count,prompt_eval_duration_sec,prompt_processing_tokens_per_sec,total_duration_sec,wall_clock_sec,model_size_gb,model_vram_gb,peak_system_ram_mb,peak_gpu_vram_mib
+qwen2.5:1.5b-instruct-fp16,1,factual,"What is the capital of Australia, when was it chosen as the capital, and what is its current estimated population?","The capital of Australia is Canberra. It was chosen as the capital in 1908. As of 2023, the estimated population of Canberra is around 400,000 people.",46,1.8927,24.3,52,0.2265,229.56,2.1494,4.2066,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,2,arithmetic,Solve this arithmetic problem step by step: Calculate (145 * 18) - (936 / 12) + 84. What is the final exact number?,"To solve the arithmetic problem step by step, we will follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).
+
+Given expression: (145 * 18) - (936 / 12) + 84
+
+Step 1: Perform the multiplication and division from left to right.
+1. First, calculate 145 * 18:
+   145 * 18 = 2610
+
+2. Next, calculate 936 / 12:
+   936 / 12 = 78
+
+Now the expression looks like this:
+2610 - 78 + 84
+
+Step 2: Perform the subtraction and addition from left to right.
+1. First, calculate 2610 - 78:
+   2610 - 78 = 2532
+
+2. Then, calculate 2532 + 84:
+   2532 + 84 = 2616
+
+Therefore, the final exact number",256,11.1134,23.04,70,0.1453,481.9,11.2857,13.336,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,3,logic_puzzle,"Three people (Alice, Bob, and Charlie) are sitting side by side on a bench facing forward. Alice is sitting directly to the left of Bob. Charlie is not sitting next to Alice. From left to right, what is the seating order of the three people? Explain step by step.","To determine the seating order of Alice, Bob, and Charlie, we need to follow the given conditions step by step:
+
+1. **Condition 1:** Alice is sitting directly to the left of Bob.
+   - This means that if we number the positions from left to right as 1, 2, and 3, Alice must be in position 1 and Bob must be in position 2.
+
+2. **Condition 2:** Charlie is not sitting next to Alice.
+   - Since Alice is in position 1, Charlie cannot be in position 2 (next to Alice) or position 3 (next to Alice).
+
+Given these conditions, let's analyze the possible positions for Charlie:
+
+- If Charlie is in position 1, then Alice and Bob would be in positions 2 and 3, respectively, which violates the condition that Charlie is not next to Alice.
+- If Charlie is in position 2, then Alice and Bob would be in positions 1 and 3, respectively, which also violates the condition that Charlie is not next to Alice.
+- If Charlie is in position 3, then Alice and Bob would be in positions 1 and 2, respectively, which satisfies the condition that Charlie is not next to Alice.
+
+Therefore, the",256,11.2141,22.83,88,0.156,564.14,11.4067,13.4729,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,4,code_generation,"Write a Python function `is_palindrome(text: str) -> bool` that returns True if the string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces. Include type hints, docstring, and 3 unit test assertions.","```python
+import re
+
+def is_palindrome(text: str) -> bool:
+    """"""
+    Checks if the given string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces.
+    
+    Args:
+    text (str): The string to check.
+    
+    Returns:
+    bool: True if the string is a palindrome, False otherwise.
+    """"""
+    # Remove non-alphanumeric characters and convert to lowercase
+    cleaned_text = re.sub(r'[^A-Za-z0-9]', '', text).lower()
+    # Check if the cleaned text is equal to its reverse
+    return cleaned_text == cleaned_text[::-1]
+
+# Unit test assertions
+def test_is_palindrome():
+    assert is_palindrome(""A man, a plan, a canal: Panama"") == True, ""Test case 1 failed""
+    assert is_palindrome(""race a car"") == False, ""Test case 2 failed""
+    assert is_palindrome(""No lemon, no melon"") == True, ""Test case 3 failed""
+    assert is_palindrome(""Was it a car or a cat I saw?"") == True, ""Test case 4 failed""
+    assert is_palindrome(""No 'x' in Nixon"") == True, ""Test",256,11.3353,22.58,79,0.1613,489.91,11.5182,13.5713,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,5,code_debugging,"Identify and explain the bug in this Python binary search implementation, then provide the corrected version:
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr)
+    while low < high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid
+        else:
+            high = mid - 1
+    return -1","The bug in the provided Python binary search implementation is that the `high` variable is not updated correctly when the target is not found. Specifically, the `high` variable should be updated to `mid` when the target is not found, not `mid - 1`. This is because the binary search algorithm is designed to narrow down the search range by half in each iteration, and the correct position to place the `high` variable is the middle index of the current search range.
+
+Here is the corrected version of the binary search function:
+
+```python
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1  # Corrected: high = mid
+        else:
+            high = mid - 1  # Corrected: high = mid
+    return -1
+```
+
+In this corrected version, the `high` variable is updated to `mid` when the target is not found, ensuring that the search range is correctly narrowed down.",248,10.7098,23.16,125,0.2356,530.63,10.9581,13.0182,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,6,summarisation,"Summarise the following text in exactly two clear, factual sentences:
+'Transformer-based large language models have revolutionised artificial intelligence across multiple domains, from natural language generation and translation to automated reasoning and software engineering. However, serving modern generative models at scale introduces substantial computational bottlenecks, predominantly driven by high memory bandwidth consumption during the autoregressive decoding phase and quadratic memory scaling of key-value (KV) attention caches. Consequently, deploying LLMs efficiently on resource-constrained consumer GPUs necessitates targeted optimisation techniques, such as low-bit post-training quantization, grouped-query attention, and continuous batching systems like vLLM.'","Transformer-based large language models have transformed AI across various fields, but scaling these models efficiently on consumer GPUs remains challenging due to high memory bandwidth consumption and quadratic memory scaling. To address these issues, techniques like low-bit post-training quantization, grouped-query attention, and continuous batching systems are employed to optimize model deployment.",63,2.6401,23.86,157,0.1969,797.37,2.8626,4.8988,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,7,translation_french_hindi,"Translate the following English sentence accurately into both French and Hindi (in Devanagari script):
+'Careful optimization of artificial intelligence models allows researchers to run advanced language technology directly on consumer laptops without relying on cloud servers.'","French:
+""Un optimisation soignée des modèles d'intelligence artificielle permet aux chercheurs de déployer directement des technologies de langage avancées sur des ordinateurs portables de consommateurs sans faire appel aux serveurs cloud.""
+
+Hindi (Devanagari script):
+""संतुलित विकास वाटनील इंटरनेट इंजन को विकसित करने से लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर, विशेष भाषात",256,11.0919,23.08,73,0.1629,448.23,11.2743,13.3486,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,8,json_extraction,"Extract the structured details from the following biography into a single valid JSON object with keys 'full_name' (string), 'age' (integer), 'occupation' (string), 'affiliated_institution' (string), and 'research_topics' (array of strings). Do not include any conversational preamble:
+'Dr. Ananya Sharma, a 34-year-old principal research scientist at the Indian Institute of Science, leads projects on post-training quantization, sparse attention kernels, and edge model inference.'","```json
+{
+  ""full_name"": ""Dr. Ananya Sharma"",
+  ""age"": 34,
+  ""occupation"": ""principal research scientist"",
+  ""affiliated_institution"": ""Indian Institute of Science"",
+  ""research_topics"": [
+    ""post-training quantization"",
+    ""sparse attention kernels"",
+    ""edge model inference""
+  ]
+}
+```",76,3.045,24.96,131,0.1942,674.49,3.2577,5.3144,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,9,constrained_writing,"Write a 4-sentence short story about an engineer deploying an AI model. Strict constraints: exactly 4 sentences, and EVERY sentence must begin with the letter 'E'.","Engineers meticulously engineered their AI model, ensuring every edge case was elegantly encoded. Ensuring robustness, they meticulously tested the environment, ensuring every edge case was elegantly executed. Finally, they eagerly deployed the model, eager to see its effects.",52,2.2159,23.47,64,0.152,420.91,2.3869,4.422,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-fp16,10,hallucination_check,"Who won the 2090 FIFA Men's World Cup, which stadium hosted the final match, and what was the final score?","I'm sorry, but I'm unable to assist with that.",14,0.5571,25.13,57,0.1896,300.67,0.7696,2.8383,3.505,2.149,14187.79,2493.0
+qwen2.5:1.5b-instruct-q4_K_M,1,factual,"What is the capital of Australia, when was it chosen as the capital, and what is its current estimated population?","The capital of Australia is Canberra. It was chosen as the capital in 1908. As of 2023, the estimated population of Canberra is around 400,000 people.",46,0.5337,86.19,52,0.1982,262.41,0.7488,2.8013,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,2,arithmetic,Solve this arithmetic problem step by step: Calculate (145 * 18) - (936 / 12) + 84. What is the final exact number?,"To solve the arithmetic problem step by step, we will follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).
+
+Given expression: (145 * 18) - (936 / 12) + 84
+
+1. First, perform the multiplication and division from left to right:
+   - 145 * 18 = 2610
+   - 936 / 12 = 78
+
+   So the expression now looks like: 2610 - 78 + 84
+
+2. Next, perform the subtraction and addition from left to right:
+   - 2610 - 78 = 2532
+   - 2532 + 84 = 2616
+
+Therefore, the final exact number is 2616.",212,2.0171,105.1,70,0.0725,966.12,2.1183,4.1709,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,3,logic_puzzle,"Three people (Alice, Bob, and Charlie) are sitting side by side on a bench facing forward. Alice is sitting directly to the left of Bob. Charlie is not sitting next to Alice. From left to right, what is the seating order of the three people? Explain step by step.","Let's analyze the seating arrangement step by step:
+
+1. **Identify the constraints:**
+   - Alice is sitting directly to the left of Bob.
+   - Charlie is not sitting next to Alice.
+
+2. **List the possible positions:**
+   - Since Alice is to the left of Bob, they must be in the order: Alice, Bob.
+   - Charlie cannot be next to Alice, so Charlie cannot be in the position directly to the left of Alice or directly to the right of Bob.
+
+3. **Determine the possible positions for Charlie:**
+   - If Alice is in the first position, Bob is in the second position, and Charlie is in the third position, Charlie is not next to Alice.
+   - If Alice is in the second position, Bob is in the first position, and Charlie is in the third position, Charlie is not next to Alice.
+   - If Alice is in the third position, Bob is in the second position, and Charlie is in the first position, Charlie is not next to Alice.
+
+4. **Combine the constraints:**
+   - The only valid arrangement that satisfies all the constraints is: Alice, Bob, Charlie.
+
+Therefore, the seating order from left to right is: Alice, Bob, Charlie.",255,2.4022,106.15,88,0.0822,1070.65,2.5041,4.5432,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,4,code_generation,"Write a Python function `is_palindrome(text: str) -> bool` that returns True if the string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces. Include type hints, docstring, and 3 unit test assertions.","```python
+def is_palindrome(text: str) -> bool:
+    """"""
+    Check if the given string is a palindrome, ignoring non-alphanumeric characters, case, and spaces.
+    
+    Args:
+    text (str): The string to check.
+    
+    Returns:
+    bool: True if the string is a palindrome, False otherwise.
+    """"""
+    # Remove non-alphanumeric characters and convert to lowercase
+    cleaned_text = ''.join(char.lower() for char in text if char.isalnum())
+    
+    # Check if the cleaned text is equal to its reverse
+    return cleaned_text == cleaned_text[::-1]
+
+# Unit tests
+def test_is_palindrome():
+    assert is_palindrome(""A man, a plan, a canal: Panama"") == True
+    assert is_palindrome(""racecar"") == True
+    assert is_palindrome(""No 'x' in Nixon"") == True
+    assert is_palindrome(""Hello, World!"") == False
+    assert is_palindrome(""Was it a car or a cat I saw?"") == True
+    assert is_palindrome(""No 'x' in Nixon"") == True
+    assert is_palindrome(""A Toyota's a Toyota"") == True
+    assert is_palindrome(""No 'x",256,2.3294,109.9,79,0.0821,961.68,2.4426,4.5056,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,5,code_debugging,"Identify and explain the bug in this Python binary search implementation, then provide the corrected version:
+
+def binary_search(arr, target):
+    low = 0
+    high = len(arr)
+    while low < high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid
+        else:
+            high = mid - 1
+    return -1","The bug in the provided Python binary search implementation is that the `low` and `high` variables are initialized with `len(arr)` and `0` respectively, which is incorrect. The correct initialization should be `low = 0` and `high = len(arr) - 1` to ensure the loop runs correctly.
+
+Here is the corrected version of the binary search function:
+
+```python
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+
+Explanation of the bug:
+- The original implementation used `low = 0` and `high = len(arr)` which would cause the loop to run indefinitely if the target is not found, because the `low` and `high` values would never change.
+- The corrected implementation uses `low = 0` and `high = len(arr) - 1` which ensures the loop will run correctly and eventually find the target or determine it",256,2.3919,107.03,125,0.0954,1310.16,2.5026,4.5467,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,6,summarisation,"Summarise the following text in exactly two clear, factual sentences:
+'Transformer-based large language models have revolutionised artificial intelligence across multiple domains, from natural language generation and translation to automated reasoning and software engineering. However, serving modern generative models at scale introduces substantial computational bottlenecks, predominantly driven by high memory bandwidth consumption during the autoregressive decoding phase and quadratic memory scaling of key-value (KV) attention caches. Consequently, deploying LLMs efficiently on resource-constrained consumer GPUs necessitates targeted optimisation techniques, such as low-bit post-training quantization, grouped-query attention, and continuous batching systems like vLLM.'","Transformer-based large language models have transformed AI across various fields, but scaling them efficiently on consumer GPUs remains challenging due to high memory bandwidth and quadratic memory scaling of key-value attention caches. This necessitates optimization techniques like low-bit post-training quantization, grouped-query attention, and continuous batching systems.",59,0.5199,113.48,157,0.1595,984.06,0.7012,2.7297,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,7,translation_french_hindi,"Translate the following English sentence accurately into both French and Hindi (in Devanagari script):
+'Careful optimization of artificial intelligence models allows researchers to run advanced language technology directly on consumer laptops without relying on cloud servers.'","French:
+""Un optimisation soignée des modèles d'intelligence artificielle permet aux chercheurs de déployer directement des technologies de langage avancées sur des ordinateurs portables de consommateurs sans se fonder sur les serveurs cloud.""
+
+Devanagari script (Hindi):
+""संतुलित विकसित इतनी व्यावसायिक लेखन विज्ञान के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावस",256,2.3147,110.6,73,0.0829,880.65,2.4197,4.4872,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,8,json_extraction,"Extract the structured details from the following biography into a single valid JSON object with keys 'full_name' (string), 'age' (integer), 'occupation' (string), 'affiliated_institution' (string), and 'research_topics' (array of strings). Do not include any conversational preamble:
+'Dr. Ananya Sharma, a 34-year-old principal research scientist at the Indian Institute of Science, leads projects on post-training quantization, sparse attention kernels, and edge model inference.'","```json
+{
+  ""full_name"": ""Dr. Ananya Sharma"",
+  ""age"": 34,
+  ""occupation"": ""principal research scientist"",
+  ""affiliated_institution"": ""Indian Institute of Science"",
+  ""research_topics"": [
+    ""post-training quantization"",
+    ""sparse attention kernels"",
+    ""edge model inference""
+  ]
+}
+```",76,0.7909,96.09,131,0.1106,1184.88,0.9201,2.944,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,9,constrained_writing,"Write a 4-sentence short story about an engineer deploying an AI model. Strict constraints: exactly 4 sentences, and EVERY sentence must begin with the letter 'E'.","Engineer Evelyn meticulously engineered the model, ensuring every edge was sharp. Every edge was carefully engineered, ensuring the model's efficiency. Enhanced by expertise, the engineered model executed swiftly, efficiently. Evelyn's meticulousness ensured the model's effectiveness, executing with precision.",54,0.5503,98.13,64,0.0701,912.85,0.6451,2.6966,1.086,1.086,12718.82,1354.0
+qwen2.5:1.5b-instruct-q4_K_M,10,hallucination_check,"Who won the 2090 FIFA Men's World Cup, which stadium hosted the final match, and what was the final score?","The 2018 FIFA World Cup was held in Russia, and the final match was played at the Luzhniki Stadium in Moscow. The winner of the tournament was France, who defeated Croatia 4-2 in the final.",49,0.5705,85.88,57,0.0588,970.11,0.6729,2.7256,1.086,1.086,12718.82,1354.0
