@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "timestamp": "2026-11-16 23:29:08",
+    "system": {
+      "os": "Windows 11 Home Single Language",
+      "cpu": "12th Gen Intel Core i5-12500H",
+      "ram_gb": 16.0,
+      "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB VRAM)"
+    },
+    "parameters": {
+      "temperature": 0,
+      "seed": 42,
+      "num_predict": 256
+    }
+  },
+  "runs": {
+    "qwen2.5:1.5b-instruct-fp16": {
+      "model": "qwen2.5:1.5b-instruct-fp16",
+      "ps_info": {
+        "name": "qwen2.5:1.5b-instruct-fp16",
+        "model": "qwen2.5:1.5b-instruct-fp16",
+        "size": 3762972260,
+        "digest": "d8035f049126b916d6dd500c31d123e369f9e32867b05001c09c1da56fef739f",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "1.5B",
+          "quantization_level": "F16"
+        },
+        "expires_at": "2026-11-16T23:30:52.0307707+05:30",
+        "size_vram": 2307118857,
+        "context_length": 4096
+      },
+      "model_size_bytes": 3762972260,
+      "vram_bytes": 2307118857,
+      "memory_stats": {
+        "start_system_ram_mb": 14148.73,
+        "peak_system_ram_mb": 14187.79,
+        "start_gpu_vram_mib": 2425.0,
+        "peak_gpu_vram_mib": 2493.0
+      },
+      "prompt_results": [
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 1,
+          "category": "factual",
+          "prompt": "What is the capital of Australia, when was it chosen as the capital, and what is its current estimated population?",
+          "response": "The capital of Australia is Canberra. It was chosen as the capital in 1908. As of 2023, the estimated population of Canberra is around 400,000 people.",
+          "generated_tokens": 46,
+          "generation_duration_sec": 1.8927,
+          "generation_tokens_per_sec": 24.3,
+          "prompt_eval_count": 52,
+          "prompt_eval_duration_sec": 0.2265,
+          "prompt_processing_tokens_per_sec": 229.56,
+          "total_duration_sec": 2.1494,
+          "wall_clock_sec": 4.2066
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 2,
+          "category": "arithmetic",
+          "prompt": "Solve this arithmetic problem step by step: Calculate (145 * 18) - (936 / 12) + 84. What is the final exact number?",
+          "response": "To solve the arithmetic problem step by step, we will follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\nGiven expression: (145 * 18) - (936 / 12) + 84\n\nStep 1: Perform the multiplication and division from left to right.\n1. First, calculate 145 * 18:\n   145 * 18 = 2610\n\n2. Next, calculate 936 / 12:\n   936 / 12 = 78\n\nNow the expression looks like this:\n2610 - 78 + 84\n\nStep 2: Perform the subtraction and addition from left to right.\n1. First, calculate 2610 - 78:\n   2610 - 78 = 2532\n\n2. Then, calculate 2532 + 84:\n   2532 + 84 = 2616\n\nTherefore, the final exact number",
+          "generated_tokens": 256,
+          "generation_duration_sec": 11.1134,
+          "generation_tokens_per_sec": 23.04,
+          "prompt_eval_count": 70,
+          "prompt_eval_duration_sec": 0.1453,
+          "prompt_processing_tokens_per_sec": 481.9,
+          "total_duration_sec": 11.2857,
+          "wall_clock_sec": 13.336
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 3,
+          "category": "logic_puzzle",
+          "prompt": "Three people (Alice, Bob, and Charlie) are sitting side by side on a bench facing forward. Alice is sitting directly to the left of Bob. Charlie is not sitting next to Alice. From left to right, what is the seating order of the three people? Explain step by step.",
+          "response": "To determine the seating order of Alice, Bob, and Charlie, we need to follow the given conditions step by step:\n\n1. **Condition 1:** Alice is sitting directly to the left of Bob.\n   - This means that if we number the positions from left to right as 1, 2, and 3, Alice must be in position 1 and Bob must be in position 2.\n\n2. **Condition 2:** Charlie is not sitting next to Alice.\n   - Since Alice is in position 1, Charlie cannot be in position 2 (next to Alice) or position 3 (next to Alice).\n\nGiven these conditions, let's analyze the possible positions for Charlie:\n\n- If Charlie is in position 1, then Alice and Bob would be in positions 2 and 3, respectively, which violates the condition that Charlie is not next to Alice.\n- If Charlie is in position 2, then Alice and Bob would be in positions 1 and 3, respectively, which also violates the condition that Charlie is not next to Alice.\n- If Charlie is in position 3, then Alice and Bob would be in positions 1 and 2, respectively, which satisfies the condition that Charlie is not next to Alice.\n\nTherefore, the",
+          "generated_tokens": 256,
+          "generation_duration_sec": 11.2141,
+          "generation_tokens_per_sec": 22.83,
+          "prompt_eval_count": 88,
+          "prompt_eval_duration_sec": 0.156,
+          "prompt_processing_tokens_per_sec": 564.14,
+          "total_duration_sec": 11.4067,
+          "wall_clock_sec": 13.4729
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 4,
+          "category": "code_generation",
+          "prompt": "Write a Python function `is_palindrome(text: str) -> bool` that returns True if the string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces. Include type hints, docstring, and 3 unit test assertions.",
+          "response": "```python\nimport re\n\ndef is_palindrome(text: str) -> bool:\n    \"\"\"\n    Checks if the given string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces.\n    \n    Args:\n    text (str): The string to check.\n    \n    Returns:\n    bool: True if the string is a palindrome, False otherwise.\n    \"\"\"\n    # Remove non-alphanumeric characters and convert to lowercase\n    cleaned_text = re.sub(r'[^A-Za-z0-9]', '', text).lower()\n    # Check if the cleaned text is equal to its reverse\n    return cleaned_text == cleaned_text[::-1]\n\n# Unit test assertions\ndef test_is_palindrome():\n    assert is_palindrome(\"A man, a plan, a canal: Panama\") == True, \"Test case 1 failed\"\n    assert is_palindrome(\"race a car\") == False, \"Test case 2 failed\"\n    assert is_palindrome(\"No lemon, no melon\") == True, \"Test case 3 failed\"\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True, \"Test case 4 failed\"\n    assert is_palindrome(\"No 'x' in Nixon\") == True, \"Test",
+          "generated_tokens": 256,
+          "generation_duration_sec": 11.3353,
+          "generation_tokens_per_sec": 22.58,
+          "prompt_eval_count": 79,
+          "prompt_eval_duration_sec": 0.1613,
+          "prompt_processing_tokens_per_sec": 489.91,
+          "total_duration_sec": 11.5182,
+          "wall_clock_sec": 13.5713
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 5,
+          "category": "code_debugging",
+          "prompt": "Identify and explain the bug in this Python binary search implementation, then provide the corrected version:\n\ndef binary_search(arr, target):\n    low = 0\n    high = len(arr)\n    while low < high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid\n        else:\n            high = mid - 1\n    return -1",
+          "response": "The bug in the provided Python binary search implementation is that the `high` variable is not updated correctly when the target is not found. Specifically, the `high` variable should be updated to `mid` when the target is not found, not `mid - 1`. This is because the binary search algorithm is designed to narrow down the search range by half in each iteration, and the correct position to place the `high` variable is the middle index of the current search range.\n\nHere is the corrected version of the binary search function:\n\n```python\ndef binary_search(arr, target):\n    low = 0\n    high = len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1  # Corrected: high = mid\n        else:\n            high = mid - 1  # Corrected: high = mid\n    return -1\n```\n\nIn this corrected version, the `high` variable is updated to `mid` when the target is not found, ensuring that the search range is correctly narrowed down.",
+          "generated_tokens": 248,
+          "generation_duration_sec": 10.7098,
+          "generation_tokens_per_sec": 23.16,
+          "prompt_eval_count": 125,
+          "prompt_eval_duration_sec": 0.2356,
+          "prompt_processing_tokens_per_sec": 530.63,
+          "total_duration_sec": 10.9581,
+          "wall_clock_sec": 13.0182
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 6,
+          "category": "summarisation",
+          "prompt": "Summarise the following text in exactly two clear, factual sentences:\n'Transformer-based large language models have revolutionised artificial intelligence across multiple domains, from natural language generation and translation to automated reasoning and software engineering. However, serving modern generative models at scale introduces substantial computational bottlenecks, predominantly driven by high memory bandwidth consumption during the autoregressive decoding phase and quadratic memory scaling of key-value (KV) attention caches. Consequently, deploying LLMs efficiently on resource-constrained consumer GPUs necessitates targeted optimisation techniques, such as low-bit post-training quantization, grouped-query attention, and continuous batching systems like vLLM.'",
+          "response": "Transformer-based large language models have transformed AI across various fields, but scaling these models efficiently on consumer GPUs remains challenging due to high memory bandwidth consumption and quadratic memory scaling. To address these issues, techniques like low-bit post-training quantization, grouped-query attention, and continuous batching systems are employed to optimize model deployment.",
+          "generated_tokens": 63,
+          "generation_duration_sec": 2.6401,
+          "generation_tokens_per_sec": 23.86,
+          "prompt_eval_count": 157,
+          "prompt_eval_duration_sec": 0.1969,
+          "prompt_processing_tokens_per_sec": 797.37,
+          "total_duration_sec": 2.8626,
+          "wall_clock_sec": 4.8988
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 7,
+          "category": "translation_french_hindi",
+          "prompt": "Translate the following English sentence accurately into both French and Hindi (in Devanagari script):\n'Careful optimization of artificial intelligence models allows researchers to run advanced language technology directly on consumer laptops without relying on cloud servers.'",
+          "response": "French:\n\"Un optimisation soignée des modèles d'intelligence artificielle permet aux chercheurs de déployer directement des technologies de langage avancées sur des ordinateurs portables de consommateurs sans faire appel aux serveurs cloud.\"\n\nHindi (Devanagari script):\n\"संतुलित विकास वाटनील इंटरनेट इंजन को विकसित करने से लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर, विशेष भाषात्मक विज्ञान की विकास को लेकर, विशेष भाषात",
+          "generated_tokens": 256,
+          "generation_duration_sec": 11.0919,
+          "generation_tokens_per_sec": 23.08,
+          "prompt_eval_count": 73,
+          "prompt_eval_duration_sec": 0.1629,
+          "prompt_processing_tokens_per_sec": 448.23,
+          "total_duration_sec": 11.2743,
+          "wall_clock_sec": 13.3486
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 8,
+          "category": "json_extraction",
+          "prompt": "Extract the structured details from the following biography into a single valid JSON object with keys 'full_name' (string), 'age' (integer), 'occupation' (string), 'affiliated_institution' (string), and 'research_topics' (array of strings). Do not include any conversational preamble:\n'Dr. Ananya Sharma, a 34-year-old principal research scientist at the Indian Institute of Science, leads projects on post-training quantization, sparse attention kernels, and edge model inference.'",
+          "response": "```json\n{\n  \"full_name\": \"Dr. Ananya Sharma\",\n  \"age\": 34,\n  \"occupation\": \"principal research scientist\",\n  \"affiliated_institution\": \"Indian Institute of Science\",\n  \"research_topics\": [\n    \"post-training quantization\",\n    \"sparse attention kernels\",\n    \"edge model inference\"\n  ]\n}\n```",
+          "generated_tokens": 76,
+          "generation_duration_sec": 3.045,
+          "generation_tokens_per_sec": 24.96,
+          "prompt_eval_count": 131,
+          "prompt_eval_duration_sec": 0.1942,
+          "prompt_processing_tokens_per_sec": 674.49,
+          "total_duration_sec": 3.2577,
+          "wall_clock_sec": 5.3144
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 9,
+          "category": "constrained_writing",
+          "prompt": "Write a 4-sentence short story about an engineer deploying an AI model. Strict constraints: exactly 4 sentences, and EVERY sentence must begin with the letter 'E'.",
+          "response": "Engineers meticulously engineered their AI model, ensuring every edge case was elegantly encoded. Ensuring robustness, they meticulously tested the environment, ensuring every edge case was elegantly executed. Finally, they eagerly deployed the model, eager to see its effects.",
+          "generated_tokens": 52,
+          "generation_duration_sec": 2.2159,
+          "generation_tokens_per_sec": 23.47,
+          "prompt_eval_count": 64,
+          "prompt_eval_duration_sec": 0.152,
+          "prompt_processing_tokens_per_sec": 420.91,
+          "total_duration_sec": 2.3869,
+          "wall_clock_sec": 4.422
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-fp16",
+          "prompt_id": 10,
+          "category": "hallucination_check",
+          "prompt": "Who won the 2090 FIFA Men's World Cup, which stadium hosted the final match, and what was the final score?",
+          "response": "I'm sorry, but I'm unable to assist with that.",
+          "generated_tokens": 14,
+          "generation_duration_sec": 0.5571,
+          "generation_tokens_per_sec": 25.13,
+          "prompt_eval_count": 57,
+          "prompt_eval_duration_sec": 0.1896,
+          "prompt_processing_tokens_per_sec": 300.67,
+          "total_duration_sec": 0.7696,
+          "wall_clock_sec": 2.8383
+        }
+      ]
+    },
+    "qwen2.5:1.5b-instruct-q4_K_M": {
+      "model": "qwen2.5:1.5b-instruct-q4_K_M",
+      "ps_info": {
+        "name": "qwen2.5:1.5b-instruct-q4_K_M",
+        "model": "qwen2.5:1.5b-instruct-q4_K_M",
+        "size": 1166236712,
+        "digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "1.5B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-16T23:33:22.59705+05:30",
+        "size_vram": 1166236712,
+        "context_length": 4096
+      },
+      "model_size_bytes": 1166236712,
+      "vram_bytes": 1166236712,
+      "memory_stats": {
+        "start_system_ram_mb": 12503.64,
+        "peak_system_ram_mb": 12718.82,
+        "start_gpu_vram_mib": 1310.0,
+        "peak_gpu_vram_mib": 1354.0
+      },
+      "prompt_results": [
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 1,
+          "category": "factual",
+          "prompt": "What is the capital of Australia, when was it chosen as the capital, and what is its current estimated population?",
+          "response": "The capital of Australia is Canberra. It was chosen as the capital in 1908. As of 2023, the estimated population of Canberra is around 400,000 people.",
+          "generated_tokens": 46,
+          "generation_duration_sec": 0.5337,
+          "generation_tokens_per_sec": 86.19,
+          "prompt_eval_count": 52,
+          "prompt_eval_duration_sec": 0.1982,
+          "prompt_processing_tokens_per_sec": 262.41,
+          "total_duration_sec": 0.7488,
+          "wall_clock_sec": 2.8013
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 2,
+          "category": "arithmetic",
+          "prompt": "Solve this arithmetic problem step by step: Calculate (145 * 18) - (936 / 12) + 84. What is the final exact number?",
+          "response": "To solve the arithmetic problem step by step, we will follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\nGiven expression: (145 * 18) - (936 / 12) + 84\n\n1. First, perform the multiplication and division from left to right:\n   - 145 * 18 = 2610\n   - 936 / 12 = 78\n\n   So the expression now looks like: 2610 - 78 + 84\n\n2. Next, perform the subtraction and addition from left to right:\n   - 2610 - 78 = 2532\n   - 2532 + 84 = 2616\n\nTherefore, the final exact number is 2616.",
+          "generated_tokens": 212,
+          "generation_duration_sec": 2.0171,
+          "generation_tokens_per_sec": 105.1,
+          "prompt_eval_count": 70,
+          "prompt_eval_duration_sec": 0.0725,
+          "prompt_processing_tokens_per_sec": 966.12,
+          "total_duration_sec": 2.1183,
+          "wall_clock_sec": 4.1709
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 3,
+          "category": "logic_puzzle",
+          "prompt": "Three people (Alice, Bob, and Charlie) are sitting side by side on a bench facing forward. Alice is sitting directly to the left of Bob. Charlie is not sitting next to Alice. From left to right, what is the seating order of the three people? Explain step by step.",
+          "response": "Let's analyze the seating arrangement step by step:\n\n1. **Identify the constraints:**\n   - Alice is sitting directly to the left of Bob.\n   - Charlie is not sitting next to Alice.\n\n2. **List the possible positions:**\n   - Since Alice is to the left of Bob, they must be in the order: Alice, Bob.\n   - Charlie cannot be next to Alice, so Charlie cannot be in the position directly to the left of Alice or directly to the right of Bob.\n\n3. **Determine the possible positions for Charlie:**\n   - If Alice is in the first position, Bob is in the second position, and Charlie is in the third position, Charlie is not next to Alice.\n   - If Alice is in the second position, Bob is in the first position, and Charlie is in the third position, Charlie is not next to Alice.\n   - If Alice is in the third position, Bob is in the second position, and Charlie is in the first position, Charlie is not next to Alice.\n\n4. **Combine the constraints:**\n   - The only valid arrangement that satisfies all the constraints is: Alice, Bob, Charlie.\n\nTherefore, the seating order from left to right is: Alice, Bob, Charlie.",
+          "generated_tokens": 255,
+          "generation_duration_sec": 2.4022,
+          "generation_tokens_per_sec": 106.15,
+          "prompt_eval_count": 88,
+          "prompt_eval_duration_sec": 0.0822,
+          "prompt_processing_tokens_per_sec": 1070.65,
+          "total_duration_sec": 2.5041,
+          "wall_clock_sec": 4.5432
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 4,
+          "category": "code_generation",
+          "prompt": "Write a Python function `is_palindrome(text: str) -> bool` that returns True if the string is a palindrome, ignoring non-alphanumeric characters, casing, and spaces. Include type hints, docstring, and 3 unit test assertions.",
+          "response": "```python\ndef is_palindrome(text: str) -> bool:\n    \"\"\"\n    Check if the given string is a palindrome, ignoring non-alphanumeric characters, case, and spaces.\n    \n    Args:\n    text (str): The string to check.\n    \n    Returns:\n    bool: True if the string is a palindrome, False otherwise.\n    \"\"\"\n    # Remove non-alphanumeric characters and convert to lowercase\n    cleaned_text = ''.join(char.lower() for char in text if char.isalnum())\n    \n    # Check if the cleaned text is equal to its reverse\n    return cleaned_text == cleaned_text[::-1]\n\n# Unit tests\ndef test_is_palindrome():\n    assert is_palindrome(\"A man, a plan, a canal: Panama\") == True\n    assert is_palindrome(\"racecar\") == True\n    assert is_palindrome(\"No 'x' in Nixon\") == True\n    assert is_palindrome(\"Hello, World!\") == False\n    assert is_palindrome(\"Was it a car or a cat I saw?\") == True\n    assert is_palindrome(\"No 'x' in Nixon\") == True\n    assert is_palindrome(\"A Toyota's a Toyota\") == True\n    assert is_palindrome(\"No 'x",
+          "generated_tokens": 256,
+          "generation_duration_sec": 2.3294,
+          "generation_tokens_per_sec": 109.9,
+          "prompt_eval_count": 79,
+          "prompt_eval_duration_sec": 0.0821,
+          "prompt_processing_tokens_per_sec": 961.68,
+          "total_duration_sec": 2.4426,
+          "wall_clock_sec": 4.5056
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 5,
+          "category": "code_debugging",
+          "prompt": "Identify and explain the bug in this Python binary search implementation, then provide the corrected version:\n\ndef binary_search(arr, target):\n    low = 0\n    high = len(arr)\n    while low < high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid\n        else:\n            high = mid - 1\n    return -1",
+          "response": "The bug in the provided Python binary search implementation is that the `low` and `high` variables are initialized with `len(arr)` and `0` respectively, which is incorrect. The correct initialization should be `low = 0` and `high = len(arr) - 1` to ensure the loop runs correctly.\n\nHere is the corrected version of the binary search function:\n\n```python\ndef binary_search(arr, target):\n    low = 0\n    high = len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n```\n\nExplanation of the bug:\n- The original implementation used `low = 0` and `high = len(arr)` which would cause the loop to run indefinitely if the target is not found, because the `low` and `high` values would never change.\n- The corrected implementation uses `low = 0` and `high = len(arr) - 1` which ensures the loop will run correctly and eventually find the target or determine it",
+          "generated_tokens": 256,
+          "generation_duration_sec": 2.3919,
+          "generation_tokens_per_sec": 107.03,
+          "prompt_eval_count": 125,
+          "prompt_eval_duration_sec": 0.0954,
+          "prompt_processing_tokens_per_sec": 1310.16,
+          "total_duration_sec": 2.5026,
+          "wall_clock_sec": 4.5467
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 6,
+          "category": "summarisation",
+          "prompt": "Summarise the following text in exactly two clear, factual sentences:\n'Transformer-based large language models have revolutionised artificial intelligence across multiple domains, from natural language generation and translation to automated reasoning and software engineering. However, serving modern generative models at scale introduces substantial computational bottlenecks, predominantly driven by high memory bandwidth consumption during the autoregressive decoding phase and quadratic memory scaling of key-value (KV) attention caches. Consequently, deploying LLMs efficiently on resource-constrained consumer GPUs necessitates targeted optimisation techniques, such as low-bit post-training quantization, grouped-query attention, and continuous batching systems like vLLM.'",
+          "response": "Transformer-based large language models have transformed AI across various fields, but scaling them efficiently on consumer GPUs remains challenging due to high memory bandwidth and quadratic memory scaling of key-value attention caches. This necessitates optimization techniques like low-bit post-training quantization, grouped-query attention, and continuous batching systems.",
+          "generated_tokens": 59,
+          "generation_duration_sec": 0.5199,
+          "generation_tokens_per_sec": 113.48,
+          "prompt_eval_count": 157,
+          "prompt_eval_duration_sec": 0.1595,
+          "prompt_processing_tokens_per_sec": 984.06,
+          "total_duration_sec": 0.7012,
+          "wall_clock_sec": 2.7297
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 7,
+          "category": "translation_french_hindi",
+          "prompt": "Translate the following English sentence accurately into both French and Hindi (in Devanagari script):\n'Careful optimization of artificial intelligence models allows researchers to run advanced language technology directly on consumer laptops without relying on cloud servers.'",
+          "response": "French:\n\"Un optimisation soignée des modèles d'intelligence artificielle permet aux chercheurs de déployer directement des technologies de langage avancées sur des ordinateurs portables de consommateurs sans se fonder sur les serveurs cloud.\"\n\nDevanagari script (Hindi):\n\"संतुलित विकसित इतनी व्यावसायिक लेखन विज्ञान के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावसायिक लेखन के लिए लेखन करने के लिए इतनी व्यावस",
+          "generated_tokens": 256,
+          "generation_duration_sec": 2.3147,
+          "generation_tokens_per_sec": 110.6,
+          "prompt_eval_count": 73,
+          "prompt_eval_duration_sec": 0.0829,
+          "prompt_processing_tokens_per_sec": 880.65,
+          "total_duration_sec": 2.4197,
+          "wall_clock_sec": 4.4872
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 8,
+          "category": "json_extraction",
+          "prompt": "Extract the structured details from the following biography into a single valid JSON object with keys 'full_name' (string), 'age' (integer), 'occupation' (string), 'affiliated_institution' (string), and 'research_topics' (array of strings). Do not include any conversational preamble:\n'Dr. Ananya Sharma, a 34-year-old principal research scientist at the Indian Institute of Science, leads projects on post-training quantization, sparse attention kernels, and edge model inference.'",
+          "response": "```json\n{\n  \"full_name\": \"Dr. Ananya Sharma\",\n  \"age\": 34,\n  \"occupation\": \"principal research scientist\",\n  \"affiliated_institution\": \"Indian Institute of Science\",\n  \"research_topics\": [\n    \"post-training quantization\",\n    \"sparse attention kernels\",\n    \"edge model inference\"\n  ]\n}\n```",
+          "generated_tokens": 76,
+          "generation_duration_sec": 0.7909,
+          "generation_tokens_per_sec": 96.09,
+          "prompt_eval_count": 131,
+          "prompt_eval_duration_sec": 0.1106,
+          "prompt_processing_tokens_per_sec": 1184.88,
+          "total_duration_sec": 0.9201,
+          "wall_clock_sec": 2.944
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 9,
+          "category": "constrained_writing",
+          "prompt": "Write a 4-sentence short story about an engineer deploying an AI model. Strict constraints: exactly 4 sentences, and EVERY sentence must begin with the letter 'E'.",
+          "response": "Engineer Evelyn meticulously engineered the model, ensuring every edge was sharp. Every edge was carefully engineered, ensuring the model's efficiency. Enhanced by expertise, the engineered model executed swiftly, efficiently. Evelyn's meticulousness ensured the model's effectiveness, executing with precision.",
+          "generated_tokens": 54,
+          "generation_duration_sec": 0.5503,
+          "generation_tokens_per_sec": 98.13,
+          "prompt_eval_count": 64,
+          "prompt_eval_duration_sec": 0.0701,
+          "prompt_processing_tokens_per_sec": 912.85,
+          "total_duration_sec": 0.6451,
+          "wall_clock_sec": 2.6966
+        },
+        {
+          "model": "qwen2.5:1.5b-instruct-q4_K_M",
+          "prompt_id": 10,
+          "category": "hallucination_check",
+          "prompt": "Who won the 2090 FIFA Men's World Cup, which stadium hosted the final match, and what was the final score?",
+          "response": "The 2018 FIFA World Cup was held in Russia, and the final match was played at the Luzhniki Stadium in Moscow. The winner of the tournament was France, who defeated Croatia 4-2 in the final.",
+          "generated_tokens": 49,
+          "generation_duration_sec": 0.5705,
+          "generation_tokens_per_sec": 85.88,
+          "prompt_eval_count": 57,
+          "prompt_eval_duration_sec": 0.0588,
+          "prompt_processing_tokens_per_sec": 970.11,
+          "total_duration_sec": 0.6729,
+          "wall_clock_sec": 2.7256
+        }
+      ]
+    }
+  }
+}
