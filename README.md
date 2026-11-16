@@ -1,9 +1,4 @@
-# Assessment Submission Repository
-
-**Student:** Vivek  
-**GitHub Repository:** [FABvivek/tndrr-assignment](https://github.com/FABvivek/tndrr-assignment)  
-**Submission Form:** https://forms.gle/zmfDqVkG6M4u8jEH7  
-**Deadline:** Thursday, 19 November 2026 at 11:59 PM IST  
+ 
 
 ---
 
